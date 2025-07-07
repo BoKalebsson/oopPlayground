@@ -75,4 +75,9 @@ public class SystemDeveloper extends Employee {
         return sb.toString();
     }
 
+    @Override
+    public String toString() {
+        return String.format("System Developer {Id: %d, Name: %s, Salary: %.2f}", getId(), getName(), getSalary());
+    }
+
 }

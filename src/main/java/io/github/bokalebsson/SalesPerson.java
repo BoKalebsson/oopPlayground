@@ -69,5 +69,10 @@ public class SalesPerson extends Employee {
         return sb.toString();
     }
 
+    @Override
+    public String toString() {
+        return String.format("SalesPerson {Id: %d, Name: %s, Salary: %.2f}", getId(), getName(), getSalary());
+    }
+
 
 }
