@@ -1,6 +1,9 @@
 package io.github.bokalebsson;
 
+import com.sun.source.tree.TryTree;
+
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 
 public class Employee {
 
@@ -13,10 +16,10 @@ public class Employee {
     private LocalDate dateHired;
 
     // Constructor:
-    public Employee(String name, LocalDate dateHired){
+    public Employee(String name, String dateString){
         this.id = ++idCounter;
         this.name = name;
-        this.dateHired = dateHired;
+        this.dateHired = parseDate(dateString);
     }
 
     // Getters:
@@ -54,6 +57,14 @@ public class Employee {
         sb.append("Date Hired: ").append(dateHired).append("\n");
         sb.append("---------------------------").append("\n");;
         return sb.toString();
+    }
+
+    private static LocalDate parseDate(String dateString) {
+        try {
+            return LocalDate.parse(dateString);
+        } catch (DateTimeParseException e) {
+            throw new IllegalArgumentException("Invalid date format, expected: yyyy-MM-dd");
+        }
     }
 
 
