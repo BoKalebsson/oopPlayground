@@ -42,4 +42,15 @@ public class SystemDeveloper extends Employee {
     public double getSalary() {
         return super.getSalary() + (1000 * certificates) + (1500 * programmingLanguages);
     }
+
+    public String getSummary() {
+        String baseSummary = super.getSummary();
+        StringBuilder sb = new StringBuilder(baseSummary);
+        sb.append("-- System Developer --").append("\n");
+        sb.append("Certificates: ").append(certificates).append("\n");
+        sb.append("Programming Languages: ").append(programmingLanguages).append("\n");
+        sb.append("---------------------------").append("\n");;
+        return sb.toString();
+    }
+
 }
