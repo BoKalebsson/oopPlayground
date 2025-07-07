@@ -20,5 +20,11 @@ public class Main {
                 new String[]{"Jens", "Kalle", "Martin"}, 15);
         System.out.println(Katja.getSummary());
 
+        //Testing toString() with System Developer:
+        System.out.println(Greger.toString());
+
+        //Testing toString() with Sales Person:
+        System.out.println(Katja.toString());
+
     }
 }
