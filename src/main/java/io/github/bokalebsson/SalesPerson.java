@@ -71,7 +71,8 @@ public class SalesPerson extends Employee {
 
     @Override
     public String toString() {
-        return String.format("SalesPerson {Id: %d, Name: %s, Salary: %.2f}", getId(), getName(), getSalary());
+        return super.toString() + String.format(", Clients: %d, Acquired Clients: %d",
+                clients.length, acquiredClients);
     }
 
 

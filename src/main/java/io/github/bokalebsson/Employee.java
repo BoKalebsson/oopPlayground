@@ -67,5 +67,9 @@ public class Employee {
         return sb.toString();
     }
 
+    public String toString() {
+        return String.format("Employee {Id: %d, Name: %s, Salary: %.2f}", getId(), getName(), getSalary());
+    }
+
 
 }
