@@ -3,36 +3,46 @@ package io.github.bokalebsson;
 public class SystemDeveloper extends Employee {
 
     // Attributes:
-    private int certificates;
-    private int programmingLanguages;
+    private String[] certificates;
+    private String[] programmingLanguages;
 
     // Constructor:
-    public SystemDeveloper(String name, int year, int month, int day, int certificates, int programmingLanguages){
+    public SystemDeveloper(String name, int year, int month, int day, String[] certificates, String[] programmingLanguages){
         super(name, year, month, day);
-        this.certificates = certificates;
-        this.programmingLanguages = programmingLanguages;
+        setCertificates(certificates);
+        setProgrammingLanguages(programmingLanguages);
     }
 
     // Getters:
-    public int getCertificates() {
+    public String[] getCertificates() {
         return this.certificates;
     }
 
-    public int getProgrammingLanguages() {
+    public String[] getProgrammingLanguages() {
         return this.programmingLanguages;
     }
 
     // Setters:
-    public void setCertificates(int certificationCount){
-        if(certificationCount < 0 ){
-            throw new IllegalArgumentException("Certifications can't be a negative number.");
+    public void setCertificates(String[] certificationCount){
+
+        if(certificationCount == null){
+            throw new IllegalArgumentException("The array is not allowed to be null.");
+        }
+
+        if(certificationCount.length == 0){
+            throw new IllegalArgumentException("The array is not allowed to be empty.");
         }
         certificates = certificationCount;
     }
 
-    public void setProgrammingLanguages(int programmingLanguagesCount){
-        if(programmingLanguagesCount < 0 ){
-            throw new IllegalArgumentException("Programming languages can't be a negative number.");
+    public void setProgrammingLanguages(String[] programmingLanguagesCount){
+
+        if(programmingLanguagesCount == null){
+            throw new IllegalArgumentException("The array is not allowed to be null.");
+        }
+
+        if(programmingLanguagesCount.length == 0){
+            throw new IllegalArgumentException("The array is not allowed to be empty.");
         }
         programmingLanguages = programmingLanguagesCount;
     }
@@ -40,15 +50,27 @@ public class SystemDeveloper extends Employee {
     // Operations:
     @Override
     public double getSalary() {
-        return super.getSalary() + (1000 * certificates) + (1500 * programmingLanguages);
+        double baseSalary = super.getSalary();
+        int certBonus = certificates.length * 1000;
+        int langBonus = programmingLanguages.length * 1500;
+        return baseSalary + certBonus + langBonus;
+    }
+
+    private String arrayToStringOrNone(String[] arr) {
+        if (arr == null || arr.length == 0) {
+            return "None";
+        }
+        return String.join(", ", arr);
     }
 
     public String getSummary() {
+        String certificationResult = arrayToStringOrNone(certificates);
+        String languagesResult = arrayToStringOrNone(programmingLanguages);
         String baseSummary = super.getSummary();
         StringBuilder sb = new StringBuilder(baseSummary);
         sb.append("-- System Developer --").append("\n");
-        sb.append("Certificates: ").append(certificates).append("\n");
-        sb.append("Programming Languages: ").append(programmingLanguages).append("\n");
+        sb.append("Certificates: ").append(certificationResult).append("\n");
+        sb.append("Programming Languages: ").append(languagesResult).append("\n");
         sb.append("---------------------------").append("\n");;
         return sb.toString();
     }
