@@ -68,7 +68,7 @@ public class Employee {
     }
 
     public String toString() {
-        return String.format("Employee {Id: %d, Name: %s, Salary: %.2f}", getId(), getName(), getSalary());
+        return String.format("\nEmployee Information:\nId: %d \nName: %s \nDate Hired: %s\nSalary: %.2f \n", getId(), getName(), getDateHired(), getSalary());
     }
 
 

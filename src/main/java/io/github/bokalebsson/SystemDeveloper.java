@@ -77,7 +77,7 @@ public class SystemDeveloper extends Employee {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", Certificates: %d, Programming Languages: %d",
+        return super.toString() + String.format("Certificates: %d \nProgramming Languages: %d\n",
                 certificates.length, programmingLanguages.length);
     }
 

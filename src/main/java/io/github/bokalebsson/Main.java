@@ -20,10 +20,13 @@ public class Main {
                 new String[]{"Jens", "Kalle", "Martin"}, 15);
         System.out.println(Katja.getSummary());
 
-        //Testing toString() with System Developer:
+        // Testing toString() as Employee:
+        System.out.println(Magnus.toString());
+
+        // Testing toString() as System Developer:
         System.out.println(Greger.toString());
 
-        //Testing toString() with Sales Person:
+        // Testing toString() as Sales Person:
         System.out.println(Katja.toString());
 
     }
