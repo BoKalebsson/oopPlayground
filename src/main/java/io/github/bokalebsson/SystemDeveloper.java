@@ -13,6 +13,30 @@ public class SystemDeveloper extends Employee {
         this.programmingLanguages = programmingLanguages;
     }
 
+    // Getters:
+    public int getCertificates() {
+        return this.certificates;
+    }
+
+    public int getProgrammingLanguages() {
+        return this.programmingLanguages;
+    }
+
+    // Setters:
+    public void setCertificates(int certificationCount){
+        if(certificationCount < 0 ){
+            throw new IllegalArgumentException("Certifications can't be a negative number.");
+        }
+        certificates = certificationCount;
+    }
+
+    public void setProgrammingLanguages(int programmingLanguagesCount){
+        if(programmingLanguagesCount < 0 ){
+            throw new IllegalArgumentException("Programming languages can't be a negative number.");
+        }
+        programmingLanguages = programmingLanguagesCount;
+    }
+
     // Operations:
     @Override
     public double getSalary() {
