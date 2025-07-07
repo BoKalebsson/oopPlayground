@@ -14,5 +14,11 @@ public class Main {
                 new String[]{"Java", "Python"}, new String[]{"Java", "Python", "C++"});
         System.out.println(Greger.getSummary());
 
+        // Simulating setting up a new Sales Person:
+        SalesPerson Katja = new SalesPerson("Katja Svensson",
+                2025, 3, 24,
+                new String[]{"Jens", "Kalle", "Martin"}, 15);
+        System.out.println(Katja.getSummary());
+
     }
 }
