@@ -65,7 +65,7 @@ public class SalesPerson extends Employee {
         String clientsResult = arrayToStringOrNone(clients);
         String baseSummary = super.getSummary();
         StringBuilder sb = new StringBuilder(baseSummary);
-        sb.append("-- Sales Person --").append("\n");
+        sb.append("Employee Type: Sales Person\n");
         sb.append("Clients: ").append(clientsResult).append("\n");
         sb.append("Acquired Clients: ").append(acquiredClients).append("\n");
         sb.append("---------------------------").append("\n");;

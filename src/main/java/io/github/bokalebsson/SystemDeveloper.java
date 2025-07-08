@@ -71,7 +71,7 @@ public class SystemDeveloper extends Employee {
         String languagesResult = arrayToStringOrNone(programmingLanguages);
         String baseSummary = super.getSummary();
         StringBuilder sb = new StringBuilder(baseSummary);
-        sb.append("-- System Developer --").append("\n");
+        sb.append("Employee Type: System Developer\n");
         sb.append("Certificates: ").append(certificationResult).append("\n");
         sb.append("Programming Languages: ").append(languagesResult).append("\n");
         sb.append("---------------------------").append("\n");;
