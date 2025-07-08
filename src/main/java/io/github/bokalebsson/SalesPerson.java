@@ -44,11 +44,12 @@ public class SalesPerson extends Employee {
 
     // Operations:
     @Override
-    public double getSalary() {
-        double baseSalary = super.getSalary();
+    public void calculateSalary() {
+        final double BASE_SALARY = 25000;
         int maintainedBonus = clients.length * 500;
         int acquiredBonus = acquiredClients * 1000;
-        return baseSalary + maintainedBonus + acquiredBonus;
+        double totalSalary = BASE_SALARY + maintainedBonus + acquiredBonus;
+        setSalary(totalSalary);
     }
 
     private String arrayToStringOrNone(String[] arr) {

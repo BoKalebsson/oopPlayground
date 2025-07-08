@@ -4,15 +4,15 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 
 
-public class Employee {
+public abstract class Employee {
 
     private static int idCounter = 0;
-    private static final double BASE_SALARY = 25000.0;
 
     // Attributes:
     private int id;
     private String name;
     private LocalDate dateHired;
+    private double salary;
 
     // Constructor:
     public Employee(String name, int year, int month, int day) {
@@ -40,7 +40,7 @@ public class Employee {
     }
 
     public double getSalary() {
-        return BASE_SALARY;
+        return salary;
     }
 
     public LocalDate getDateHired() {
@@ -53,6 +53,10 @@ public class Employee {
             throw new IllegalArgumentException("Name cannot be null or empty.");
         }
         this.name = name;
+    }
+
+    protected void setSalary(double salary) {
+        this.salary = salary;
     }
 
     // Operations:
@@ -70,6 +74,8 @@ public class Employee {
     public String toString() {
         return String.format("\nEmployee Information:\nId: %d \nName: %s \nDate Hired: %s\nSalary: %.2f \n", getId(), getName(), getDateHired(), getSalary());
     }
+
+    public abstract void calculateSalary();
 
 
 }

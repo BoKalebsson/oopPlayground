@@ -49,11 +49,12 @@ public class SystemDeveloper extends Employee {
 
     // Operations:
     @Override
-    public double getSalary() {
-        double baseSalary = super.getSalary();
+    public void calculateSalary() {
+        final double BASE_SALARY = 25000;
         int certBonus = certificates.length * 1000;
         int langBonus = programmingLanguages.length * 1500;
-        return baseSalary + certBonus + langBonus;
+        double totalSalary = BASE_SALARY + certBonus + langBonus;
+        setSalary(totalSalary);
     }
 
     private String arrayToStringOrNone(String[] arr) {
