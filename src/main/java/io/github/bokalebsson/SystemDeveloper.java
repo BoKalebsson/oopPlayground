@@ -64,6 +64,7 @@ public class SystemDeveloper extends Employee {
         return String.join(", ", arr);
     }
 
+    // Included calculateSalary() here, to always get the correct salary.
     public String getSummary() {
         calculateSalary();
         String certificationResult = arrayToStringOrNone(certificates);
@@ -77,6 +78,7 @@ public class SystemDeveloper extends Employee {
         return sb.toString();
     }
 
+    // Included calculateSalary() here, to always get the correct salary.
     @Override
     public String toString() {
         calculateSalary();

@@ -59,6 +59,7 @@ public class SalesPerson extends Employee {
         return String.join(", ", arr);
     }
 
+    // Included calculateSalary() here, to always get the correct salary.
     public String getSummary() {
         calculateSalary();
         String clientsResult = arrayToStringOrNone(clients);
@@ -71,6 +72,7 @@ public class SalesPerson extends Employee {
         return sb.toString();
     }
 
+    // Included calculateSalary() here, to always get the correct salary.
     @Override
     public String toString() {
         calculateSalary();
