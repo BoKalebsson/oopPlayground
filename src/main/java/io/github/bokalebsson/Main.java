@@ -3,6 +3,9 @@ package io.github.bokalebsson;
 public class Main {
     public static void main(String[] args) {
 
+        // Simulating setting up a new Regular Employee:
+        RegularEmployee Magnus = new RegularEmployee("Magnus Persson", 2025, 1, 13);
+        System.out.println(Magnus.getSummary());
 
         // Simulating setting up a new System Developer:
         SystemDeveloper Greger = new SystemDeveloper("Greger Pettersson",
@@ -15,6 +18,9 @@ public class Main {
                 2025, 3, 24,
                 new String[]{"Jens", "Kalle", "Martin"}, 15);
         System.out.println(Katja.getSummary());
+
+        // Testing toString() as a Regular Employee:
+        System.out.println(Magnus.toString());
 
         // Testing toString() as System Developer:
         System.out.println(Greger.toString());
