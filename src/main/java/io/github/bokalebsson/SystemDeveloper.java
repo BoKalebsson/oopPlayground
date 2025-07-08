@@ -65,6 +65,7 @@ public class SystemDeveloper extends Employee {
     }
 
     public String getSummary() {
+        calculateSalary();
         String certificationResult = arrayToStringOrNone(certificates);
         String languagesResult = arrayToStringOrNone(programmingLanguages);
         String baseSummary = super.getSummary();
@@ -78,6 +79,7 @@ public class SystemDeveloper extends Employee {
 
     @Override
     public String toString() {
+        calculateSalary();
         return super.toString() + String.format("Certificates: %d \nProgramming Languages: %d\n",
                 certificates.length, programmingLanguages.length);
     }

@@ -60,6 +60,7 @@ public class SalesPerson extends Employee {
     }
 
     public String getSummary() {
+        calculateSalary();
         String clientsResult = arrayToStringOrNone(clients);
         String baseSummary = super.getSummary();
         StringBuilder sb = new StringBuilder(baseSummary);
@@ -72,6 +73,7 @@ public class SalesPerson extends Employee {
 
     @Override
     public String toString() {
+        calculateSalary();
         return super.toString() + String.format("Clients: %d \nAcquired Clients: %d\n",
                 clients.length, acquiredClients);
     }
