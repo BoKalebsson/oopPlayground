@@ -55,7 +55,10 @@ public abstract class Employee {
         this.name = name;
     }
 
-    protected void setSalary(double salary) {
+    protected final void setSalary(double salary) {
+        if (salary < 0) {
+            throw new IllegalArgumentException("Salary cannot be negative.");
+        }
         this.salary = salary;
     }
 
